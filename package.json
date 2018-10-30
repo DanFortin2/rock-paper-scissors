@@ -4,12 +4,15 @@
   "description": "",
   "scripts": {
     "test": "mocha",
-    "testdbg" : "mocha --inspect-brk"
+    "testdbg": "mocha --inspect-brk"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.1.1",
     "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "growl": "^1.10.5"
   }
 }
