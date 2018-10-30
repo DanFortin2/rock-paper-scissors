@@ -18,9 +18,8 @@ let playerTwoMoveOneValue;
 let playerTwoMoveTwoValue;
 let playerTwoMoveThreeValue;
 
-let playerOneScore = 0;
-let playerTwoScore = 0;
-debugger;
+let playerOneScore;
+let playerTwoScore;
 
 //Set players moves based on input
 const setPlayerMoves = (player, moveOneType, moveOneValue, moveTwoType, moveTwoValue, moveThreeType, moveThreeValue) => {
@@ -118,17 +117,13 @@ const getRoundWinner = (roundNumber) => {
     //different scenarios where different types are picked who wins
     if (playerOneMoveOneType === 'rock') {
       if(playerTwoMoveOneType === 'paper') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveOneType === 'scissors') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveOneType === 'rock') {
         if (playerOneMoveOneValue < playerTwoMoveOneValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveOneValue > playerTwoMoveOneValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveOneValue === playerTwoMoveOneValue) {
           return `Tie`;
@@ -136,17 +131,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveOneType === 'paper') {
       if(playerTwoMoveOneType === 'scissors') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveOneType === 'rock') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveOneType === 'paper') {
         if (playerOneMoveOneValue < playerTwoMoveOneValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveOneValue > playerTwoMoveOneValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveOneValue === playerTwoMoveOneValue) {
           return `Tie`;
@@ -154,17 +145,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveOneType === 'scissors') {
       if(playerTwoMoveOneType === 'rock') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveOneType === 'paper') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveOneType === 'scissors') {
         if (playerOneMoveOneValue < playerTwoMoveOneValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveOneValue > playerTwoMoveOneValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveOneValue === playerTwoMoveOneValue) {
           return `Tie`;
@@ -177,17 +164,14 @@ const getRoundWinner = (roundNumber) => {
     //different scenarios where different types are picked who wins
     if (playerOneMoveTwoType === 'rock') {
       if(playerTwoMoveTwoType === 'paper') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveTwoType === 'scissors') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveTwoType === 'rock') {
         if (playerOneMoveTwoValue < playerTwoMoveTwoValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveTwoValue > playerTwoMoveTwoValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore); console.log(playerOneScore);
+            console.log(playerOneScore);
           return `Player One`;
         } else if (playerOneMoveTwoValue === playerTwoMoveTwoValue) {
           return `Tie`;
@@ -195,17 +179,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveTwoType === 'paper') {
       if(playerTwoMoveTwoType === 'scissors') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveTwoType === 'rock') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveTwoType === 'paper') {
         if (playerOneMoveTwoValue < playerTwoMoveTwoValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveTwoValue > playerTwoMoveTwoValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveTwoValue === playerTwoMoveTwoValue) {
           return `Tie`;
@@ -213,17 +193,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveTwoType === 'scissors') {
       if(playerTwoMoveTwoType === 'rock') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveTwoType === 'paper') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveTwoType === 'scissors') {
         if (playerOneMoveTwoValue < playerTwoMoveTwoValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveTwoValue > playerTwoMoveTwoValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveTwoValue === playerTwoMoveTwoValue) {
           return `Tie`;
@@ -237,17 +213,13 @@ const getRoundWinner = (roundNumber) => {
     //different scenarios where different types are picked who wins
     if (playerOneMoveThreeType === 'rock') {
       if(playerTwoMoveThreeType === 'paper') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveThreeType === 'scissors') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveThreeType === 'rock') {
         if (playerOneMoveThreeValue < playerTwoMoveThreeValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveThreeValue > playerTwoMoveThreeValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveThreeValue === playerTwoMoveThreeValue) {
           return `Tie`;
@@ -255,17 +227,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveThreeType === 'paper') {
       if(playerTwoMoveThreeType === 'scissors') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveThreeType === 'rock') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveThreeType === 'paper') {
         if (playerOneMoveThreeValue < playerTwoMoveThreeValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveThreeValue > playerTwoMoveThreeValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveThreeValue === playerTwoMoveThreeValue) {
           return `Tie`;
@@ -273,17 +241,13 @@ const getRoundWinner = (roundNumber) => {
       }
     } else if (playerOneMoveThreeType === 'scissors') {
       if(playerTwoMoveThreeType === 'rock') {
-        playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
         return `Player Two`;
       } else if (playerTwoMoveThreeType === 'paper') {
-        playerOneScore++; console.log('Player One Score' + playerOneScore);
         return `Player One`;
       } else if (playerTwoMoveThreeType === 'scissors') {
         if (playerOneMoveThreeValue < playerTwoMoveThreeValue) {
-          playerTwoScore++; console.log('Player Two Score' + playerTwoScore);
           return `Player Two`;
         } else if (playerOneMoveThreeValue > playerTwoMoveThreeValue) {
-          playerOneScore++; console.log('Player One Score' + playerOneScore);
           return `Player One`;
         } else if (playerOneMoveThreeValue === playerTwoMoveThreeValue) {
           return `Tie`;
@@ -296,26 +260,34 @@ const getRoundWinner = (roundNumber) => {
 };
 
 
+
 //return overall game winner
 const getGameWinner = () => {
-  debugger;
+  playerOneScore = 0;
+  playerTwoScore = 0;
+
+
+  let roundWinnerOne = getRoundWinner(1);
+  let roundWinnerTwo = getRoundWinner(2);
+  let roundWinnerThree = getRoundWinner(3);
+
+  trackWins(roundWinnerOne);
+  trackWins(roundWinnerTwo);
+  trackWins(roundWinnerThree);
+
   if (playerOneScore > playerTwoScore) {
-    console.log('Player One ' + playerOneScore);
-    playerOneScore = 0;
-    playerTwoScore = 0;
     return `Player One`;
   } else if (playerOneScore < playerTwoScore) {
-    console.log('Player Two ' + playerTwoScore);
-    playerOneScore = 0;
-    playerTwoScore = 0;
     return `Player Two`;
   } else if (playerOneScore === playerTwoScore) {
-    playerOneScore = 0;
-    playerTwoScore = 0;
     return `Tie`;
-  } else {
-    playerOneScore = 0;
-    playerTwoScore = 0;
-    return null;
+  }
+}
+
+const trackWins = (winner) => {
+  if (winner === 'Player One') {
+    playerOneScore = (playerOneScore + 1) || 1;
+  } else if (winner === 'Player Two') {
+    playerTwoScore = (playerTwoScore + 1) || 1;
   }
 }
