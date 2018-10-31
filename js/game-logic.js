@@ -263,6 +263,10 @@ const getRoundWinner = (roundNumber) => {
 
 //return overall game winner
 const getGameWinner = () => {
+  if (!playerOneMoveOneType || !playerOneMoveTwoType || !playerOneMoveThreeType || !playerTwoMoveOneType || !playerTwoMoveTwoType || !playerTwoMoveThreeType || !playerOneMoveOneValue || !playerOneMoveTwoValue || !playerOneMoveThreeValue || !playerTwoMoveOneValue || !playerTwoMoveTwoValue || !playerTwoMoveThreeValue) {
+    return null;
+  }
+
   playerOneScore = 0;
   playerTwoScore = 0;
 
@@ -290,4 +294,72 @@ const trackWins = (winner) => {
   } else if (winner === 'Player Two') {
     playerTwoScore = (playerTwoScore + 1) || 1;
   }
+}
+
+/*
+//Easy way to set random values for computer scroll down for second way
+const setComputerMoves = () => {
+  let compTypes = ['rock', 'paper', 'scissors']
+  let randomType1 = Math.floor(Math.random() * compTypes.length);
+  let randomType2 = Math.floor(Math.random() * compTypes.length);
+  let randomType3 = Math.floor(Math.random() * compTypes.length);
+
+  playerTwoMoveOneType = compTypes[randomType1];
+  playerTwoMoveTwoType = compTypes[randomType2];
+  playerTwoMoveThreeType = compTypes[randomType3];
+
+  let randomValue = Math.floor(Math.random() * 97 + 1);
+  playerTwoMoveOneValue = randomValue;
+
+  let leftoverOne = 98 - randomValue;
+
+  let randomValue2 = Math.floor(Math.random() * leftoverOne + 1);
+  playerTwoMoveTwoValue = randomValue2;
+
+  let randomValue3 = 99 - randomValue - randomValue2;
+  playerTwoMoveThreeValue = randomValue3;
+}
+*/
+
+
+//Fun and exciting way full of learning and magic
+const setComputerMoves = () => {
+  let compTypes = ['rock', 'paper', 'scissors']
+  let randomType1 = Math.floor(Math.random() * compTypes.length);
+  let randomType2 = Math.floor(Math.random() * compTypes.length);
+  let randomType3 = Math.floor(Math.random() * compTypes.length);
+
+  playerTwoMoveOneType = compTypes[randomType1];
+  playerTwoMoveTwoType = compTypes[randomType2];
+  playerTwoMoveThreeType = compTypes[randomType3];
+
+  //create an empty array
+  let numberArray1 = [];
+
+  //count to 98 starting at 1 so max value can be 97. Array is 0 indexed
+  for (i = 1; i < 98; i++) {
+    numberArray1.push(i);
+  }
+
+  //set random value of array + 1 so it doesn't give a 0
+  let randomValue = Math.floor(Math.random() * numberArray1.length + 1);
+  playerTwoMoveOneValue = randomValue;
+
+  //create a leftOver variable and set it to equal the first number array. add 2 so it will go to 99 and subtract the first random value
+  let leftoverOne = numberArray1.length + 2 - randomValue;
+
+  //create a new empty array and count to the leftover value and push it into the array
+  let numberArrays2 = [];
+  for (x = 1; x < leftoverOne; x++) {
+    numberArrays2.push(x);
+  }
+
+  //create new random value and multiply it by the new number arrays length. Add 1 in case it rounds to 0
+  let randomValue2 = Math.floor(Math.random() * numberArrays2.length + 1);
+  playerTwoMoveTwoValue = randomValue2;
+
+
+  //create final random variable that subtracts the lengh of the second array by the second random variable. Add 1 to avoid 0
+  let randomValue3 = numberArrays2.length - randomValue2 + 1;
+  playerTwoMoveThreeValue = randomValue3;
 }
